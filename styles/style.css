@@ -138,12 +138,8 @@ ol {
   inline-size: 19px; 
 }
 
-.search-form__checkbox:checked+.search-form__pseudo-checkbox::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  width: 90%;
-  height: 90%;
+.search-form__checkbox:checked+.search-form__pseudo-checkbox {
+  border: 1px solid rgba(27, 25, 25, 1);
   background-color: #fff;
 }
 
