@@ -9,16 +9,16 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -46,45 +46,38 @@ ol {
   align-items: end;
   gap: 30px;
   inline-size: 1140px;
-
   block-size: 534px;
-  margin-block-end: 10px;
 }
 
 .result {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 16px;
   inline-size: 711px;
   block-size: inherit;
-  display: flex;
-  justify-content: end;
-  flex-direction: column;
-  gap: 16px;
 }
 
 .result__video-container {
+   position: relative;
    inline-size: inherit; 
    block-size: 386px;
-   position: relative;
 }
 
 .result__video {
+  object-fit: cover;
   inline-size: inherit;
   block-size: inherit;
-  object-fit: cover;
 }
 
-.content__details {
-  /* inline-size: 399px; */
-  inline-size: auto;
-  flex: 1;
-}
+
 
 .title {
   font-family: Oswald;
-  font-size: 75px;
   font-weight: 700;
-  /* line-height: 70px; */
-  line-height: 70px;
-  letter-spacing: 0em;
+  font-size: 75px;
+  line-height: 69px;
+  letter-spacing: 0;
   text-align: left;
   text-transform: uppercase;
 }
@@ -100,98 +93,152 @@ ol {
 }
 
 .search-form__fieldset {
-  border: none;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  border: none;
+  block-size: 100%;
 }
 
 .search-form__fieldset-title {
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   line-height: 21.6px;
 }
 
 .search-form__checkbox-list {
-  inline-size: 212px;
   display: flex;
   flex-direction: row;
   gap: 15px;
+  inline-size: 212px;
 }
 
 .search-form__label {
   display: flex;
   flex-direction: row;
-  inline-size: fit-content;
-  cursor: pointer;
   justify-content: space-around;
   gap: 5px;
-  
+  padding-block: 3px;
+  cursor: pointer;
+  inline-size: fit-content;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
+}
+
+.search-form__label:has(:focus-visible) {
+  padding-inline: 2px;
+  outline: 1px solid #fff;
+  transition: padding-inline 0.3s ease-out allow-discrete;
 }
 
 .search-form__pseudo-checkbox {
-  block-size: 19px;
-  inline-size: 19px;
+  position: relative;
   outline: 1px solid #fff;
+  block-size: 19px;
+  inline-size: 19px; 
+}
+
+.search-form__checkbox:checked+.search-form__pseudo-checkbox::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  width: 90%;
+  height: 90%;
+  background-color: #fff;
 }
 
 .search-form__textfield {
-  background-color: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: left;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  padding: 0;
-  block-size: 27px;
-  inline-size: 225px;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
+  padding: 0;
+  color: rgb(255 255 255 / 0.7);
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0;
+  text-align: left;
+  background-color: transparent;
+  block-size: 27px;
+  inline-size: 225px;
   appearance: none;
 }
 
-.search-form__submit-button {
-  inline-size: 194px;
-  block-size: 34px;
-  background: transparent;
-  font-family: 'Fira Sans Condensed';
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: #fff;
+.search-form__textfield:focus, .search-form__textfield:focus-visible, button {
+  outline: none;
+}
+
+.button {
   border: 1px solid #fff;
+  color: #fff;
+  font-family: 'Fira Sans Condensed';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0;
+  text-align: center;
+  background: transparent;
+  cursor: pointer;
+  block-size: 34px;
+
+}
+
+button:focus-visible {
+  border: 3px double #fff; 
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: rgb(84 80 80 / 1);
+}
+
+.search-form__submit-button {
+  margin-block-end: 5px;
+  inline-size: 194px;
 }
 
 .content__details {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  flex: 1;
+  gap: 24px;
   block-size: inherit;
+  inline-size: auto;
 }
 
 .content__list {
-  block-size: 534px; 
-  overflow-y: scroll;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  position: relative;
-}
-
-.content__list-item {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* gap: 20px; */
+  gap: 32px; 
+  overflow-y: scroll;
+  block-size: 534px;
 }
 
 .content__card-link {
-  text-decoration: none;
+  display: block;
   color: #fff;
+  text-decoration: none;
+}
+
+.content__card-link:focus-visible {
+  border: 1px solid #fff;
+  border-radius: 0;
+  outline: 0;
+}
+
+.content__list-item:hover {
+  text-decoration: underline;
+}
+
+.content__card-link_current {
+  background-color: rgb(84 80 80 / 1);
 }
 
 .content__video-card {
@@ -199,30 +246,31 @@ ol {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: start;
+  padding: 2px;
 }
 
 .content__video-card-description-container {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 4px;
 }
 
 .content__video-card-title {
-  text-transform: uppercase;
   font-family: Oswald;
-  font-size: 30px;
   font-weight: 700;
+  font-size: 30px;
   line-height: 30px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .content__video-card-description {
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   line-height: 16px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
 
 }
@@ -232,12 +280,16 @@ ol {
   block-size: 103px;
 }
 
+.more-button {
+  inline-size: 100%;
+}
+
 .visually-hidden {
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 }
