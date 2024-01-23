@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "check": "prettier --check './**/*.{html,css,js}'",
+    "checkstyle": "prettier --check './**/*style.{html,css,js}'",
     "format": "prettier --write './**/*.{html,css,js}'",
+    "formatstyle": "prettier --write './**/*style.{html,css,js}'",
     "lint": "stylelint \"**/*.css\"",
     "lintfix": "stylelint \"**/*.css\" --fix",
     "checkall": "npm run check && npm run lint",
