@@ -134,7 +134,7 @@ ol {
   /* padding-inline: 2px;
   padding-block: 3px; */
   outline: 1px solid currentColor;
-  transition: padding-inline 0.3s ease-out allow-discrete;
+  /* transition: padding-inline 0.3s ease-out allow-discrete; */
 }
 
 .search-form__pseudo-checkbox {
